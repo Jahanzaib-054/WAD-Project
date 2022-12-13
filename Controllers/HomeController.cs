@@ -8,5 +8,10 @@ namespace petStoreApp.Controllers
         {
             return View();
         }
+
+        public IActionResult Signup()
+        {
+            return View();
+        }
     }
 }

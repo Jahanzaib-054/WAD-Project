@@ -1,5 +1,15 @@
+using Microsoft.EntityFrameworkCore;
+using petStoreApp.Models;
+
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
+
+var connectionString =
+builder.Configuration.GetConnectionString("dbConnection");
+
+builder.Services.AddDbContext<DataDbContext>(options =>
+options.UseSqlServer(connectionString));
+
 var app = builder.Build();
 
 
